@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Session context (Claude Code)
+docs/SESSION_CONTEXT.md
