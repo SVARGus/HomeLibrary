@@ -1,7 +1,15 @@
+using HomeLibrary.Common.Dal;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<BookRepository>(provider =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("HomeLibrary");
+    return new BookRepository(connectionString!);
+});
 
 var app = builder.Build();
 
